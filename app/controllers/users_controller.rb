@@ -19,6 +19,20 @@ class UsersController < ApplicationController
     end
   end
   
+  def following
+    @title = "フォロー"
+    @user = User.fin(params[:id])
+    @users = @user.following.paginate(page:params[:page])
+    render 'show_follow'
+  end
+  
+  def followers
+  @title = "フォロワー"
+    @user = User.fin(params[:id])
+    @users = @user.followers.paginate(page:params[:page])
+    render 'show_follow'
+  end
+  
   private
   
   def user_params
