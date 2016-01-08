@@ -2,3 +2,8 @@
     <%= gravatar_for @user %>
     <%= @user.name %>
 </h1>
+<h3><span class="glyphicon glyphicon-user" aria-hidden="true"></span><%= @user.age %>・<%= @user.gender %>・<%= @user.area %></h3>
+
+<h3><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><%= @user.favorit %></h3>
+
+<h3><%= @user.email %></h3>
