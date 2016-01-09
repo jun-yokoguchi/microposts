@@ -9,14 +9,12 @@ Rails.application.routes.draw do
   
   resources :users do
     member do
-      get :following, :followers
+      get :followings, :followers
     end
   end
   
-  resources :users
+  #resources :users
   #resources :sessions, only: 
   resources :microposts
   resources :relationships, only:[:create, :destroy]
-  resources :following_users
-  resources :show_follow
 end

@@ -20,16 +20,16 @@ class UsersController < ApplicationController
     end
   end
   
-  def following
-    @title = "Following"
+  def followings
+    @title = "Followings"
     @user = User.find(params[:id])
-    @following_users = current_user.following(params[:following_id])
+    @followings_user = followings(params[:id])
   end
   
   def followers
-  @title = "Followers"
-    @user = User.find(params[id])
-    @follower_users = current_user.follower(params[:follower_id])
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @followers_user = followers(params[:followers_id])
   end
   
   private
