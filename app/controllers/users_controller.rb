@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :logged_in_user, only: [:index, :edit, :update, :destroy,:following, :followers]
   
   def show
     @user = User.find(params[:id])
@@ -20,17 +21,15 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = "フォロー"
-    @user = User.find_by(params[:id])
-    @users = @user.following.paginate(page:params[:page])
-    render 'show_follow'
+    @title = "Following"
+    @user = User.find(params[:id])
+    @following_users = current_user.following(params[:following_id])
   end
   
   def followers
-  @title = "フォロワー"
-    @user = User.find_by(params[:id])
-    @users = @user.followers.paginate(page:params[:page])
-    render 'show_follow'
+  @title = "Followers"
+    @user = User.find(params[id])
+    @follower_users = current_user.follower(params[:follower_id])
   end
   
   private
