@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    before_action :logged_in_user, only: [:index, :edit, :update, :destroy,:following, :followers]
-  
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
@@ -19,20 +18,19 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
+
   def followings
-    @title = "Followings"
     @user = User.find(params[:id])
-    @followings_user = followings(params[:id])
+    @following_users = @user.following_users
   end
-  
   def followers
-    @title = "Followers"
     @user = User.find(params[:id])
-    @followers_user = followers(params[:followers_id])
+    @follower_users = @user.follower_users
   end
-  
+    
   private
+  
+  
   
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

@@ -7,14 +7,13 @@
       </h1>
     </section>
   </aside>
+  <h1>Followings (<%= @user.following_relationships.count %>)</h1>
   <div class="col-md-8">
-    <section>
-      <h1>Following Users of <%= @followings_user.name %></h1>
-   <ul class="followings">
-       <% @users.each do |user| %>
-         <li><%= link_to gravatar_for(user, size: 30), user %><%= followings_user.name %></li>
-       <% end %>
-  </ul>
-    </section>
+    <% if @user.following_relationships.any? %>
+      <% @following_users.each do |user| %>
+        <%= user.name %>
+        <%= user.id %>
+      <% end %>
+    <% end %>
   </div>
   
