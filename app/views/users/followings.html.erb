@@ -11,6 +11,7 @@
   <div class="col-md-8">
     <% if @user.following_relationships.any? %>
       <% @following_users.each do |user| %>
+      <%= gravatar_for @user, options = { size: 50} %>
         <span class="following_users"><%= user.name %></span>
       <% end %>
     <% end %>

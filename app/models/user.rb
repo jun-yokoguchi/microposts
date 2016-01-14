@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
     validates :email, presence: true, length: { maximum: 255 },
                       format: { with: VALID_EMAIL_REGEX },
                       uniqueness: {case_sensitive: false }
-                      
+    validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_blank: true
+    validates :gender, length: { maximum: 20 }
+    validates :area, length: { maximum: 20 }
+    validates :favorit, length: { maximum: 300 }
+    
     #他のユーザーをフォローする
     def follow(other_user)
         following_relationships.find_or_create_by(followed_id: other_user.id)
