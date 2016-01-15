@@ -7,7 +7,7 @@
       </h1>
     </section>
   </aside>
-  <h1>Followings (<%= @user.follower_relationships.count %>)</h1>
+  <h1>Followers (<%= @user.follower_relationships.count %>)</h1>
   <div class="col-md-8">
     <% if @user.follower_relationships.any? %>
       <% @follower_users.each do |user| %>
@@ -16,3 +16,4 @@
       <% end %>
     <% end %>
   </div>
+</div>
