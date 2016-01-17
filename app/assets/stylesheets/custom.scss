@@ -29,6 +29,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1;
 }
 
+
 h1 {
     font-size: 3em;
     letter-spacing: -2px;
@@ -43,6 +44,13 @@ h2 {
     text-align: center;
     font-weight: normal;
     color: #777;
+}
+
+h3 {
+    color: #009;
+    text-align: left;
+    line-height: 1em;
+    font-size: 1em;
 }
 
 p {
@@ -143,6 +151,43 @@ aside {
     margin-top: 15px;
 }
 
+.stats {
+    overflow: auto;
+    margin-top: 0;
+    padding: 0;
+    a {
+        float: left;
+        padding: 0 10px;
+        border-left: 1px solid $gray-lighter;
+        color: gray;
+        &:first-child {
+            padding-left: 0;
+            border: 0;
+        }
+        &:hover { 
+            text-decoration: none;
+            color: blue;
+        }
+     }
+     strong {
+         display: block;
+     }
+}
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
 /* microposts */
 
 .microposts {
@@ -188,4 +233,21 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/*following_users*/
+
+span.following_users {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 3;
+    font-size: 1.2em;
+}
+span.follower_users {
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+    line-height: 3;
+    font-size: 1.2em;
 }

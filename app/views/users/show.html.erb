@@ -1,10 +1,29 @@
 <div class="row">
     <aside class="col-md-4">
         <section class="user_info">
-            <h1>
-              <%= gravatar_for @user %>
-              <%= @user.name %>
-            </h1>
+          <h1>
+            <%= gravatar_for @user %>
+            <%= @user.name %>
+          </h1>
+          <div>
+            <%= link_to(followings_user_path(@user)) do %>
+              Followings:
+              <strong id="followings" class="followings">
+                <%= @user.following_relationships.count %>
+              </strong>
+            <% end %>
+          </div>
+          <div>
+            <%= link_to(followers_user_path(@user)) do %>
+              Followers:
+              <strong id="followers" class="followers">
+                <%= @user.follower_relationships.count %>
+              </strong>
+            <% end %>
+          </div>
+          <h3><span class="glyphicon glyphicon-user" aria-hidden="true"></span><%= @user.age %>・<%= @user.gender %>・<%= @user.area %></h3>
+          <h3><span class="glyphicon glyphicon-comment" aria-hidden="true"></span><%= @user.favorit %></h3>
+          <h3><%= @user.email %></h3>
         </section>
     </aside>
     <div class="col-md-8">
