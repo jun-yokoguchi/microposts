@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     end
     
     #フォローしているユーザーをアンフォローする
-    def unfollow(othrer_user)
+    def unfollow(other_user)
         following_relationship = following_relationships.find_by(followed_id: other_user.id)
         following_relationship.destroy if following_relationship
     end
