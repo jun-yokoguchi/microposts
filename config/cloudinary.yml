@@ -1,0 +1,18 @@
+development:
+  cloud_name: hkunlameq
+  api_key: '355823577193699'
+  api_secret: SPFczBPMk5D7RJbRaV7Yz7bYdHA
+  enhance_image_tag: true
+  static_image_support: false
+production: 
+  cloud_name: hkunlameq
+  api_key: '355823577193699'
+  api_secret: SPFczBPMk5D7RJbRaV7Yz7bYdHA
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hkunlameq
+  api_key: '355823577193699'
+  api_secret: SPFczBPMk5D7RJbRaV7Yz7bYdHA
+  enhance_image_tag: true
+  static_image_support: false
